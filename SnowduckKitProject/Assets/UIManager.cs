@@ -14,6 +14,7 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     Image[] ToyImage = new Image[7];
     public List<Toy> Toys;
+    
     void Start()
     {
         ToyPanel.anchoredPosition = new Vector2(-1100, 30);
