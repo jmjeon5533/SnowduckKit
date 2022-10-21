@@ -231,7 +231,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Night: 0
-  Timer: 0
+  Plus: 0
+  ZeroPlus: 0
 --- !u!1 &789278798
 GameObject:
   m_ObjectHideFlags: 0
@@ -541,7 +542,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ProduceTimer: 0
-  MaxTimer: 1
+  MaxTimer: 3
   DuckObject: {fileID: 6074570327679423430, guid: b40dbeb8cea5ef2459fbdc570099c9a3, type: 3}
   MinPosition: {x: -50, y: 0, z: -50}
   MaxPosition: {x: 50, y: 0, z: 50}
