@@ -6,7 +6,7 @@ public class DuckProduce : MonoBehaviour
 {
     public float ProduceTimer;
     public float MaxTimer;
-    public GameObject ProduceObject;
+    public GameObject DuckObject;
     public Vector3 MinPosition;
     public Vector3 MaxPosition;
     public GameObject FloorGameobject;
@@ -25,7 +25,7 @@ public class DuckProduce : MonoBehaviour
         if (ProduceTimer > MaxTimer)
         {
             ProduceTimer = 0f;
-            Instantiate(ProduceObject, new Vector3(Random.Range(MinPosition.x, MaxPosition.x), FloorGameobject.transform.position.y + ProduceHeight, Random.Range(MinPosition.z, MaxPosition.z)),Quaternion.identity);
+            Instantiate(DuckObject, new Vector3(Random.Range(MinPosition.x, MaxPosition.x), FloorGameobject.transform.position.y + ProduceHeight, Random.Range(MinPosition.z, MaxPosition.z)),Quaternion.identity);
         }
     }
 }
