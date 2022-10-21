@@ -560,6 +560,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ToyPanel: {fileID: 1963205185}
   isToyPanel: 0
+  ToyImage:
+  - {fileID: 2116356731}
+  - {fileID: 1277384351}
+  - {fileID: 668220087}
+  - {fileID: 1206626798}
+  - {fileID: 1903720851}
+  - {fileID: 20796472}
+  - {fileID: 586695906}
+  Toys: []
 --- !u!4 &1001532712
 Transform:
   m_ObjectHideFlags: 0
