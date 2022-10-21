@@ -29,7 +29,7 @@ public class DataStore : MonoBehaviour
         return _Save.Achievement;
     }
 
-    public static void AddObject (GameObject _NewObject)// 오브젝트 생성 시 동작시켜 주세요.
+    public static void AddObject(GameObject _NewObject)// 오브젝트 생성 시 동작시켜 주세요.
     {
         _Save.SaveObjects.Add(_NewObject);
     }
@@ -39,18 +39,18 @@ public class DataStore : MonoBehaviour
         _Save.SaveObjects.Remove(_NewObject);
     }
 
-    
+
     public static void AddPoint(int _Point)// 포인트 획득 시 실행.
     {
         _Save.Point += _Point;
     }
-    
-    public static void SetPoint (int _Point)// 포인트 강제로 변경 시 실행.
+
+    public static void SetPoint(int _Point)// 포인트 강제로 변경 시 실행.
     {
         _Save.Point = _Point;
     }
-    
-    public static int GetPoint ()// 현제 포인트 정보를 알기 위해서 실행.
+
+    public static int GetPoint()// 현제 포인트 정보를 알기 위해서 실행.
     {
         return _Save.Point;
     }
@@ -73,11 +73,11 @@ public class DataStore : MonoBehaviour
             _Save.Point = nSDF.Point;
             _Save.Achievement = nSDF.Achievement;
 
-            for (int i = 0; i < nSDF.Name.Count ; i++)
+            for (int i = 0; i < nSDF.Name.Count; i++)
             {
-                foreach(GameObject nOb in AllPrefebs)
+                foreach (GameObject nOb in AllPrefebs)
                 {
-                    if(nOb.name == nSDF.Name[i])
+                    if (nOb.name == nSDF.Name[i])
                     {
                         GameObject nGO = Instantiate((GameObject)nOb, nSDF.Pos[i], Quaternion.Euler(nSDF.Rot[i]));
                         _Save.SaveObjects.Add(nGO);
@@ -106,7 +106,7 @@ public class DataStore : MonoBehaviour
     {
         SaveDataFormat nSDF = new SaveDataFormat();
         nSDF.Point = GetPoint();
-        foreach(GameObject nGO in _Save.SaveObjects)
+        foreach (GameObject nGO in _Save.SaveObjects)
         {
             nSDF.Name.Add(nGO.name.Substring(0, nGO.name.Length - 7));
             nSDF.Pos.Add(nGO.transform.position);
