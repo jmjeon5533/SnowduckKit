@@ -9,42 +9,57 @@ public class DuckObject : MonoBehaviour
     public float DeleteTime;
     public Vector3 DestinationPoint;
     public bool Move;
+    public bool isSelected = false;
+    public float RecoveryTime;
 
     // Start is called before the first frame update
     void Start()
     {
+        RecoveryTime = 10f;
         Move = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0)&&isSelected)
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit))
+            RaycastHit[] hit=Physics.RaycastAll(ray);
+            for(int i = 0; i < hit.Length; i++)
             {
-                if (hit.collider.CompareTag("Floor"))
+                if (hit[i].collider.CompareTag("Floor"))
                 {
-                    DestinationPoint = hit.point;
+                    DestinationPoint = hit[i].point;
                     if (nav != null)
                     {
                         nav.isStopped = false;
                     }
                 }
-
             }
+            //if (Physics.Raycast(ray, out hit))
+            //{
+            //    if (hit.collider.CompareTag("Floor"))
+            //    {
+            //        DestinationPoint = hit.point;
+            //        if (nav != null)
+            //        {
+            //            nav.isStopped = false;
+            //        }
+            //    }
+
+            //}
         }
-        if (Move)
+        if (Move&&isSelected)
         {
             nav.SetDestination(DestinationPoint);
         }
         DeleteTime -= Time.deltaTime;
         if (DeleteTime < 0)
         {
+            isSelected = false;
             //Destroy(transform.gameObject);
-            ToyDatabase.This.RemoveToy(transform.gameObject);
+            StartCoroutine(DestroyDuck());
         }
     }
     private void OnCollisionEnter(Collision collision)
@@ -56,10 +71,26 @@ public class DuckObject : MonoBehaviour
             nav.enabled = true;
             StartCoroutine(MoveStart());
         }
-        else if (collision.collider.gameObject.name.Contains("Duck"))
+        else if (collision.collider.gameObject.CompareTag("Duck"))
         {
-            nav.isStopped=true;
+            if (nav != null)
+            {
+                nav.isStopped = true;
+            }
         }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Vegetable"))
+        {
+            DeleteTime += RecoveryTime;
+            ToyDatabase.This.RemoveToy(other.gameObject);
+        }
+    }
+    IEnumerator DestroyDuck()
+    {
+        yield return new WaitForSeconds(2f);
+        ToyDatabase.This.RemoveToy(transform.gameObject);
     }
 
     IEnumerator MoveStart()
