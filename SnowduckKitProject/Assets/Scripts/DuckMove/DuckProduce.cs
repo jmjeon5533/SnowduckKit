@@ -27,8 +27,10 @@ public class DuckProduce : MonoBehaviour
         if (ProduceTimer > MaxTimer)
         {
             ProduceTimer = 0f;
+            ToyDatabase.This.AddToy(Instantiate(DuckObject, new Vector3(Random.Range(MinPosition.x, MaxPosition.x), FloorGameobject.transform.position.y + ProduceHeight, Random.Range(MinPosition.z, MaxPosition.z)), Quaternion.identity));
+            //Instantiate(DuckObject, new Vector3(Random.Range(MinPosition.x, MaxPosition.x), FloorGameobject.transform.position.y + ProduceHeight, Random.Range(MinPosition.z, MaxPosition.z)),Quaternion.identity);
             int RandomInt = Random.Range(0, 2);
-            if (RandomInt == 0)//¿À¸®1
+            if (RandomInt == 0)//ï¿½ï¿½ï¿½ï¿½1
             {
                 Instantiate(DuckObject, new Vector3(Random.Range(MinPosition.x, MaxPosition.x), FloorGameobject.transform.position.y + ProduceHeight, Random.Range(MinPosition.z, MaxPosition.z)), Quaternion.identity);
             }

@@ -43,7 +43,8 @@ public class DuckObject : MonoBehaviour
         DeleteTime -= Time.deltaTime;
         if (DeleteTime < 0)
         {
-            Destroy(transform.gameObject);
+            //Destroy(transform.gameObject);
+            ToyDatabase.This.RemoveToy(transform.gameObject);
         }
     }
     private void OnCollisionEnter(Collision collision)
