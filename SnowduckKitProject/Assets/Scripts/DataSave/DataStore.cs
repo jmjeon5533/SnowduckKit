@@ -97,11 +97,6 @@ public class DataStore : MonoBehaviour
         Save();
     }
 
-    //private void OnDestroy()
-    //{
-    //    Save();
-    //}
-
     private void Save()
     {
         SaveDataFormat nSDF = new SaveDataFormat();
