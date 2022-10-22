@@ -85,6 +85,7 @@ public class DataStore : MonoBehaviour
                     if (nOb.name == nSDF.Name[i])
                     {
                         GameObject nGO = Instantiate((GameObject)nOb, nSDF.Pos[i], Quaternion.Euler(nSDF.Rot[i]));
+                        ToyDatabase.This.AddToy(nGO);
                         _Save.SaveObjects.Add(nGO);
                         break;
                     }
