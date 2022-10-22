@@ -1016,7 +1016,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9012141022628325318, guid: dfc2629718cc3a24394c8d7a0c48655d, type: 3}
       propertyPath: AllPrefebs.Array.size
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9012141022628325318, guid: dfc2629718cc3a24394c8d7a0c48655d, type: 3}
       propertyPath: AllPrefebs.Array.data[0]
