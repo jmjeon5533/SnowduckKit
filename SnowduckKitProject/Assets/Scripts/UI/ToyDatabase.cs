@@ -20,11 +20,6 @@ public class ToyDatabase : MonoBehaviour
     void Start()
     {
         
-        for (int i = 0; i < 5; i++)
-        {
-            GameObject Go = Instantiate(FieldItemPrefab, pos[i], Quaternion.identity);
-            Go.GetComponent<FieldItem>().SetToy(ToyDB[Random.Range(0, ToyDB.Count)]);
-        }
     }
 
     // Update is called once per frame

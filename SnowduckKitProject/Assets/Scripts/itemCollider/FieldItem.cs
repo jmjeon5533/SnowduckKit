@@ -6,7 +6,7 @@ using UnityEngine;
 public class FieldItem : MonoBehaviour
 {
     public Toy toy;
-    public SpriteRenderer image;
+    public GameObject image;
 
     public void SetToy(Toy _toy)
     {
@@ -14,7 +14,8 @@ public class FieldItem : MonoBehaviour
         toy.ToyImage = _toy.ToyImage;
         toy.ToyType = _toy.ToyType;
 
-        image.sprite = toy.ToyImage;
+        image = toy.ToyImage;
+        
     }
     public Toy GetToy()
     {

@@ -24,7 +24,7 @@ public class Toy
    
     public ToyType ToyType;
     public string ToyName;
-    public Sprite ToyImage;
+    public GameObject ToyImage;
     public string ToyExplain;
     
     public bool Use()
