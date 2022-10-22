@@ -456,7 +456,7 @@ RectTransform:
   - {fileID: 1169191343}
   - {fileID: 261029554}
   m_Father: {fileID: 1058163853}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -1014,6 +1014,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9012141022628325318, guid: dfc2629718cc3a24394c8d7a0c48655d, type: 3}
+      propertyPath: AllPrefebs.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9012141022628325318, guid: dfc2629718cc3a24394c8d7a0c48655d, type: 3}
+      propertyPath: AllPrefebs.Array.data[0]
+      value: 
+      objectReference: {fileID: 9114715331844673965, guid: 1db73b84bca8a244b9971a79c8e40c36, type: 3}
+    - target: {fileID: 9012141022628325318, guid: dfc2629718cc3a24394c8d7a0c48655d, type: 3}
+      propertyPath: AllPrefebs.Array.data[1]
+      value: 
+      objectReference: {fileID: 1238655334327084231, guid: 3ce249948a807f246933fd9c7e4fd9f5, type: 3}
+    - target: {fileID: 9012141022628325318, guid: dfc2629718cc3a24394c8d7a0c48655d, type: 3}
+      propertyPath: AllPrefebs.Array.data[2]
+      value: 
+      objectReference: {fileID: 6886838223403168481, guid: 7b7722340f85a844580cdfbc4a741119, type: 3}
+    - target: {fileID: 9012141022628325318, guid: dfc2629718cc3a24394c8d7a0c48655d, type: 3}
+      propertyPath: AllPrefebs.Array.data[3]
+      value: 
+      objectReference: {fileID: 5976832218807517977, guid: 5e12d1b721c225548a176c8678802116, type: 3}
+    - target: {fileID: 9012141022628325318, guid: dfc2629718cc3a24394c8d7a0c48655d, type: 3}
+      propertyPath: AllPrefebs.Array.data[4]
+      value: 
+      objectReference: {fileID: 1403331292987047904, guid: 2a891e7f0a3ac0845b84d17b3f2195b8, type: 3}
+    - target: {fileID: 9012141022628325318, guid: dfc2629718cc3a24394c8d7a0c48655d, type: 3}
+      propertyPath: AllPrefebs.Array.data[5]
+      value: 
+      objectReference: {fileID: 319339070258894416, guid: 260e4a8a72b99b549b9c3d188f32b89c, type: 3}
+    - target: {fileID: 9012141022628325318, guid: dfc2629718cc3a24394c8d7a0c48655d, type: 3}
+      propertyPath: AllPrefebs.Array.data[6]
+      value: 
+      objectReference: {fileID: 195992810267661524, guid: 043bc619091f2a74baf86a1da5170bac, type: 3}
+    - target: {fileID: 9012141022628325318, guid: dfc2629718cc3a24394c8d7a0c48655d, type: 3}
+      propertyPath: AllPrefebs.Array.data[7]
+      value: 
+      objectReference: {fileID: 2391343619861255663, guid: 9e00241c2da19a948aa58cdd372e71b6, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfc2629718cc3a24394c8d7a0c48655d, type: 3}
 --- !u!1 &1940871300
