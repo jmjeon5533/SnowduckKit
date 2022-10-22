@@ -32,24 +32,23 @@ public class UIManager : MonoBehaviour
         StartCoroutine(Timeset()); // 시간 카운트
         ToyP.anchoredPosition = new Vector2(-1100, 30);
         isToyPanel = false;
-        //토이 패널 : 닫힘
-        //for (int i = 0; i < 7; i++)
-        //{
-        //    //ToyImage[i].enabled = false;
-        //}
+        StartCoroutine(ThirdTimerText());
     }
     IEnumerator Timeset()
     {
-        yield return new WaitForSeconds(1);
+        
         time[0]++;
         if (time[0] >= 60)
         {
             time[0] = 0;
             time[1]++;
+                StartCoroutine(ThirdTimerText());
+
             if (time[1] >= 60)
             {
                 time[1] = 0;
                 time[2]++;
+
                 if (time[2] >= 24)
                 {
                     time[2] = 0;
@@ -57,11 +56,25 @@ public class UIManager : MonoBehaviour
                 }
             }
         }
+        timeText.text = $"{time[3]}일 {time[2]}시 {time[1]}분 {time[0]}초";
+        Debug.Log($"{time[3]}일 {time[2]}시 {time[1]}분 {time[0]}초");
+        
+        yield return new WaitForSeconds(1);
         StartCoroutine(Timeset());
+    }
+    IEnumerator ThirdTimerText()
+    {
+        timeText.color = new Color(0, 0, 0, 1);
+        yield return new WaitForSeconds(5);
+        for(float i = 1; i > 0; i -= 0.03f)
+        {
+            timeText.color = new Color(0, 0, 0, i);
+            yield return new WaitForSeconds(0.02f);
+        }
     }
     void upperText()
     {
-        timeText.text = $"{time[3]}일 {time[2]}시 {time[1]}분 {time[0]}초";
+        
         pointText.text = $"{DataStore.GetPoint()}pt";
     }
     
