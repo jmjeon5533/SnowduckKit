@@ -63,6 +63,7 @@ public class DataStore : MonoBehaviour
 
     private void Start()
     {
+        AllPrefebs = Resources.LoadAll<GameObject>("Prefabs");
         Load();
         InvokeRepeating("Save", 60f, 60f);
     }
