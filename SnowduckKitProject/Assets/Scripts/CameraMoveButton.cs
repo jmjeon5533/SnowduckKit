@@ -9,6 +9,7 @@ public class CameraMoveButton : MonoBehaviour
     void Start()
     {
         GetComponent<Button>().onClick.AddListener(CameraMove);
+        GetComponent<Image>().sprite = Resources.Load<Sprite>("Image/" + Target.name.Substring(0, Target.name.Length - 7));
     }
 
     public void CameraMove()
