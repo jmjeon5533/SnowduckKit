@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3228768817982029835
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3228768817982029833}
+  - component: {fileID: 3228768817982029834}
+  m_Layer: 0
+  m_Name: DuckProduce
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3228768817982029833
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3228768817982029835}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3228768817982029834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3228768817982029835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40e07bd3ab757414ca44f72deb5c623f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ProduceTimer: 0
+  MaxTimer: 30
+  DuckObject: {fileID: 6886838223403168481, guid: 7b7722340f85a844580cdfbc4a741119, type: 3}
+  DuckObject2: {fileID: 5976832218807517977, guid: 5e12d1b721c225548a176c8678802116, type: 3}
+  Penguin1: {fileID: 195992810267661524, guid: 043bc619091f2a74baf86a1da5170bac, type: 3}
+  Penguin2: {fileID: 2391343619861255663, guid: 9e00241c2da19a948aa58cdd372e71b6, type: 3}
+  GoldDuck1: {fileID: 1403331292987047904, guid: 2a891e7f0a3ac0845b84d17b3f2195b8, type: 3}
+  GoldDuck2: {fileID: 319339070258894416, guid: 260e4a8a72b99b549b9c3d188f32b89c, type: 3}
+  MinPosition: {x: -25, y: 0, z: -25}
+  MaxPosition: {x: 25, y: 0, z: 25}
+  FloorGameobject: {fileID: 0}
+  ProduceHeight: 40
+  GaugeClickAmount: 10
+  Apple1: {fileID: 9114715331844673965, guid: 1db73b84bca8a244b9971a79c8e40c36, type: 3}
+  Apple2: {fileID: 1238655334327084231, guid: 3ce249948a807f246933fd9c7e4fd9f5, type: 3}
+  Mandarin: {fileID: 7265783557554031112, guid: 3646f044508b77a439dbbd5525faedfd, type: 3}
+  Carrot: {fileID: 5703137426540175681, guid: 0a55798804fb1b641b845c03f7f3a28f, type: 3}
+  Banana: {fileID: 7951829031722532089, guid: 1fe75fe71f4d6b341b7cfee86e0c8a91, type: 3}
+  Tomato: {fileID: 5637338782585657263, guid: 89ed2d90e1479cf41b7415cf3557f8e4, type: 3}
+  veMinPosition: {x: -50, y: 0, z: -50}
+  veMaxPosition: {x: 50, y: 0, z: 50}
+  VegetableTimer: 0
+  VegetableMax: 2
