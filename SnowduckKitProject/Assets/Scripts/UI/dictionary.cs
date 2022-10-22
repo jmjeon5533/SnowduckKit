@@ -8,11 +8,13 @@ public class dictionary : MonoBehaviour
     [SerializeField]
     Image ToyPicture;
     public Sprite[] ToyImage;
-    public int dictionaryNumber = 0;
+    public string[] ToyName;
+    public int Number;
 
     void Start()
     {
-        ToyPicture.sprite = ToyImage[0];
+        
+        Number = 0;
     }
 
     // Update is called once per frame
@@ -22,10 +24,18 @@ public class dictionary : MonoBehaviour
     }
     public void LeftButton()
     {
-
+        Number--;
+        Mathf.Clamp(Number, 0, ToyImage.Length);
+        DictionarySet();
     }
     public void RightButton()
     {
-
+        Number++;
+        Mathf.Clamp(Number, 0, ToyImage.Length);
+        DictionarySet();
+    }
+    void DictionarySet()
+    {
+        ToyPicture.sprite = ToyImage[Number];
     }
 }
