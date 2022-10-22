@@ -136,7 +136,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 3
-  m_BaseOffset: 0.33
+  m_BaseOffset: 0.36
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!114 &3179967533945230230
@@ -156,6 +156,7 @@ MonoBehaviour:
   Move: 0
   isSelected: 0
   RecoveryTime: 0
+  BC: {fileID: 0}
 --- !u!1 &2302705457601901230
 GameObject:
   m_ObjectHideFlags: 0

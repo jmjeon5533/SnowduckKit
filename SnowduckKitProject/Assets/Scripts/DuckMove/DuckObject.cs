@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.EventSystems;
 
 public class DuckObject : MonoBehaviour
 {
@@ -26,31 +27,34 @@ public class DuckObject : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0)&&isSelected)
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit[] hit=Physics.RaycastAll(ray);
-            for(int i = 0; i < hit.Length; i++)
+            if (EventSystem.current.IsPointerOverGameObject() == false)
             {
-                if (hit[i].collider.CompareTag("Floor"))
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                RaycastHit[] hit = Physics.RaycastAll(ray);
+                for (int i = 0; i < hit.Length; i++)
                 {
-                    DestinationPoint = hit[i].point;
-                    if (nav != null)
+                    if (hit[i].collider.CompareTag("Floor"))
                     {
-                        nav.isStopped = false;
+                        DestinationPoint = hit[i].point;
+                        if (nav != null)
+                        {
+                            nav.isStopped = false;
+                        }
                     }
                 }
-            }
-            //if (Physics.Raycast(ray, out hit))
-            //{
-            //    if (hit.collider.CompareTag("Floor"))
-            //    {
-            //        DestinationPoint = hit.point;
-            //        if (nav != null)
-            //        {
-            //            nav.isStopped = false;
-            //        }
-            //    }
+                //if (Physics.Raycast(ray, out hit))
+                //{
+                //    if (hit.collider.CompareTag("Floor"))
+                //    {
+                //        DestinationPoint = hit.point;
+                //        if (nav != null)
+                //        {
+                //            nav.isStopped = false;
+                //        }
+                //    }
 
-            //}
+                //}
+            }
         }
         if (Move&&isSelected)
         {
@@ -68,7 +72,7 @@ public class DuckObject : MonoBehaviour
     {
         if (collision.collider.gameObject.CompareTag("Floor"))
         {
-            BC.enabled = false;
+            BC.isTrigger = true;
             DestinationPoint.y = transform.position.y;
             nav = GetComponent<NavMeshAgent>();
             nav.enabled = true;
@@ -81,6 +85,18 @@ public class DuckObject : MonoBehaviour
                 nav.isStopped = true;
             }
         }
+    }
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.collider.gameObject.CompareTag("Floor"))
+        {
+            BC.isTrigger = true;
+            DestinationPoint.y = transform.position.y;
+            nav = GetComponent<NavMeshAgent>();
+            nav.enabled = true;
+            StartCoroutine(MoveStart());
+        }
+
     }
     private void OnTriggerEnter(Collider other)
     {
