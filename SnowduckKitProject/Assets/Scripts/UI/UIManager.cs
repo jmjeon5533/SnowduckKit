@@ -6,18 +6,18 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     [SerializeField]
-    RectTransform ToyPanel; //토이 패널
+    RectTransform ToyP; //토이 패널
     int RectPosition;
     [SerializeField]
     bool isToyPanel; //토이 패널이 열림/닫힘
 
     [SerializeField]
     Image[] ToyImage = new Image[7];
-    public List<Toy> Toys;
-    
+
+    List<Toy> ToyPanel = new List<Toy>();
     void Start()
     {
-        ToyPanel.anchoredPosition = new Vector2(-1100, 30);
+        ToyP.anchoredPosition = new Vector2(-1100, 30);
         isToyPanel = false;
         //토이 패널 : 닫힘
         for (int i = 0; i < 7; i++)
@@ -42,8 +42,13 @@ public class UIManager : MonoBehaviour
         else
             RectPosition = -1100;   
         
-        ToyPanel.anchoredPosition 
-            = new Vector2(Mathf.Lerp(ToyPanel.anchoredPosition.x, RectPosition, 0.05f), 30);
+        ToyP.anchoredPosition
+            = new Vector2(Mathf.Lerp(ToyP.anchoredPosition.x, RectPosition, 0.05f), 30);
     }
-
+    /*public void ToyPanelReset()
+    {
+        int i = 0;
+        for(; i < ToyPanel.Count && i < )
+    }
+    */
 }
