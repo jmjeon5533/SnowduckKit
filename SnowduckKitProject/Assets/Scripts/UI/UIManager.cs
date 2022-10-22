@@ -62,6 +62,7 @@ public class UIManager : MonoBehaviour
     void upperText()
     {
         timeText.text = $"{time[3]}일 {time[2]}시 {time[1]}분 {time[0]}초";
+        pointText.text = $"{DataStore.GetPoint()}pt";
     }
     
     void Update()
