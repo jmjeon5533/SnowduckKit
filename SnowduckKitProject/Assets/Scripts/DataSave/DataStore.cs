@@ -24,7 +24,7 @@ public class DataStore : MonoBehaviour
         return false;
     }
 
-    public static List<string> GetAchievement()
+    public static List<string> GetAchievement()// 도감 정보 읽어옴.
     {
         return _Save.Achievement;
     }
