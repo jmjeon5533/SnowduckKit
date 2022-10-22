@@ -29,9 +29,14 @@ public class DataStore : MonoBehaviour
         return _Save.Achievement;
     }
 
-    public static void AddObject(GameObject _NewObject)// 오브젝트 생성 시 동작시켜 주세요.
+    public static bool AddObject(GameObject _NewObject)// 오브젝트 생성 시 동작시켜 주세요.
     {
-        _Save.SaveObjects.Add(_NewObject);
+        if (!_Save.SaveObjects.Contains(_NewObject))
+        {
+            _Save.SaveObjects.Add(_NewObject);
+            return true;
+        }
+        return false;
     }
 
     public static void RemoveObject(GameObject _NewObject)// 오브젝트 제거 시 동작시켜 주세요.

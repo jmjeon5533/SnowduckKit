@@ -4,32 +4,31 @@ using UnityEngine;
 
 public class ToyDatabase : MonoBehaviour
 {
-    public static ToyDatabase ToyData;
+    public GameObject ButtonOrigin;
+    public GameObject Vf;
+    public ToyDatabase This;
+
+    private Dictionary<GameObject, GameObject> Buttons = new Dictionary<GameObject, GameObject>(); 
+
     private void Awake()
     {
-        ToyData = this;
+        This = this;
     }
-    public List<Toy> ToyDB = new List<Toy>();
 
-    public GameObject FieldItemPrefab;
-    public Vector3[] pos;
-    private void OnValidate()
+    public void AddToy (GameObject _Target)
     {
-        pos = new Vector3[ToyDB.Count]; pos = new Vector3[ToyDB.Count];
-    }
-    void Start()
-    {
-        
-        for (int i = 0; i < 5; i++)
+        if (DataStore.AddObject(_Target))
         {
-            GameObject Go = Instantiate(FieldItemPrefab, pos[i], Quaternion.identity);
-            Go.GetComponent<FieldItem>().SetToy(ToyDB[Random.Range(0, ToyDB.Count)]);
+            Buttons.Add(_Target, Instantiate(ButtonOrigin, Vf.transform));
+            Buttons[_Target].GetComponent<CameraMoveButton>().Target = _Target;
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void RemoveToy (GameObject _Target)
     {
-        
+        DataStore.RemoveObject(_Target);
+        Destroy(Buttons[_Target]);
+        Buttons.Remove(_Target);
+        Destroy(_Target);
     }
 }
