@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1565989668284067270}
   - component: {fileID: 5724773302430185840}
   - component: {fileID: 1087042147541078507}
-  - component: {fileID: 4064905547755059787}
+  - component: {fileID: -4879686994117840360}
   m_Layer: 0
   m_Name: item4
   m_TagString: Untagged
@@ -115,7 +115,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &4064905547755059787
+--- !u!114 &-4879686994117840360
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,12 +124,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 8839547610758309195}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 213114712da3ad34e940634b52395d77, type: 3}
+  m_Script: {fileID: 11500000, guid: 459a936ff133ae747b8da16f596da472, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toy:
-    ToyType: 0
-    ToyName: 
-    ToyImage: {fileID: 0}
-    ToyExplain: 
-  image: {fileID: 0}

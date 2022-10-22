@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public enum ToyType
     {
         Duck,
@@ -19,9 +20,13 @@ public enum ToyType
         WaterMelon
     }
 [System.Serializable]
-public class Toy
+public class Toy : MonoBehaviour
 {
-   
+    public static Toy toyins;
+    private void Awake()
+    {
+        toyins = this;
+    }
     public ToyType ToyType;
     public string ToyName;
     public GameObject ToyImage;

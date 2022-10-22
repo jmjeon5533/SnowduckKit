@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class itemCollider : MonoBehaviour
@@ -10,8 +11,12 @@ public class itemCollider : MonoBehaviour
         
     }
 
-    // Update is called once per frame
+    
     void Update()
+    {
+        
+    }
+    private void OnTriggerEnter(Collider other)
     {
         
     }
