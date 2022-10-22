@@ -27,7 +27,6 @@ public class Vegetable : MonoBehaviour
         }
         if (collision.collider.CompareTag("Duck"))
         {
-            Debug.Log("Triiger");
             collision.collider.GetComponent<DuckObject>().DeleteTime += collision.collider.GetComponent<DuckObject>().RecoveryTime;
             ToyDatabase.This.RemoveToy(transform.gameObject);
 
