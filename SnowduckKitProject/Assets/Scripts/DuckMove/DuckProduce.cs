@@ -19,6 +19,12 @@ public class DuckProduce : MonoBehaviour
     public float GaugeClickAmount;
     public GameObject Apple1;
     public GameObject Apple2;
+    public GameObject Mandarin;
+    public GameObject Carrot;
+    public GameObject Banana;
+    public GameObject Tomato;
+    public Vector3 veMinPosition;
+    public Vector3 veMaxPosition;
     public float VegetableTimer;
     public float VegetableMax;
 
@@ -67,10 +73,30 @@ public class DuckProduce : MonoBehaviour
         if(VegetableTimer> VegetableMax)
         {
             VegetableTimer = 0f;
-            int RandomInt = Random.Range(0, 2);
+            int RandomInt = Random.Range(0, 6);
             if (RandomInt == 0)
             {
-                ToyDatabase.This.AddToy(Instantiate(Apple1, new Vector3(Random.Range(MinPosition.x, MaxPosition.x), FloorGameobject.transform.position.y + ProduceHeight, Random.Range(MinPosition.z, MaxPosition.z)), Apple1.transform.rotation));
+                ToyDatabase.This.AddToy(Instantiate(Apple1, new Vector3(Random.Range(veMinPosition.x, veMaxPosition.x), FloorGameobject.transform.position.y + ProduceHeight, Random.Range(veMinPosition.z, veMaxPosition.z)), Apple1.transform.rotation));
+            }
+            else if (RandomInt == 1)
+            {
+                ToyDatabase.This.AddToy(Instantiate(Apple2, new Vector3(Random.Range(veMinPosition.x, veMaxPosition.x), FloorGameobject.transform.position.y + ProduceHeight, Random.Range(veMinPosition.z, veMaxPosition.z)), Apple1.transform.rotation));
+            }
+            else if (RandomInt == 2)
+            {
+                ToyDatabase.This.AddToy(Instantiate(Mandarin, new Vector3(Random.Range(veMinPosition.x, veMaxPosition.x), FloorGameobject.transform.position.y + ProduceHeight, Random.Range(veMinPosition.z, veMaxPosition.z)), Apple1.transform.rotation));
+            }
+            else if (RandomInt == 3)
+            {
+                ToyDatabase.This.AddToy(Instantiate(Carrot, new Vector3(Random.Range(veMinPosition.x, veMaxPosition.x), FloorGameobject.transform.position.y + ProduceHeight, Random.Range(veMinPosition.z, veMaxPosition.z)), Apple1.transform.rotation));
+            }
+            else if (RandomInt == 4)
+            {
+                ToyDatabase.This.AddToy(Instantiate(Banana, new Vector3(Random.Range(veMinPosition.x, veMaxPosition.x), FloorGameobject.transform.position.y + ProduceHeight, Random.Range(veMinPosition.z, veMaxPosition.z)), Apple1.transform.rotation));
+            }
+            else if (RandomInt == 5)
+            {
+                ToyDatabase.This.AddToy(Instantiate(Tomato, new Vector3(Random.Range(veMinPosition.x, veMaxPosition.x), FloorGameobject.transform.position.y + ProduceHeight, Random.Range(veMinPosition.z, veMaxPosition.z)), Apple1.transform.rotation));
             }
         }
     }

@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Vegetable : MonoBehaviour
 {
-    public Rigidbody rigidbody;
+    public Rigidbody rb;
     public SphereCollider sphereCollider;
     // Start is called before the first frame update
     void Start()
     {
-        rigidbody = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
         sphereCollider = GetComponent<SphereCollider>();
     }
 
@@ -22,8 +22,8 @@ public class Vegetable : MonoBehaviour
     {
         if (collision.collider.gameObject.CompareTag("Floor"))
         {
-            rigidbody.isKinematic = true;
-            sphereCollider.isTrigger = true;
+            //rigidbody.isKinematic = true;
+            //sphereCollider.isTrigger = true;
         }
         if (collision.collider.CompareTag("Duck"))
         {
