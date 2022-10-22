@@ -1,19 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.UI;
 
 public class OptionTab : MonoBehaviour
 {
+    public float BGMVolume, SFXVolume;
+
     public bool isOption;
     [SerializeField]
     GameObject OptionPanel;
     [SerializeField]
-    Slider BGM, SFX;
+    Slider BGMSl, SFXSl;
     [SerializeField]
     Image BGMS, SFXS;
     [SerializeField]
     Sprite[] Sounds = new Sprite[4];
+
+    public AudioMixer audioMixer;
     private void OnValidate()
     {
         isOption = false;
@@ -30,7 +35,6 @@ public class OptionTab : MonoBehaviour
         if (isOption)
         {
             OptionPanel.SetActive(true);
-            SliderSoundImage();
         }
         else
         {
@@ -40,41 +44,14 @@ public class OptionTab : MonoBehaviour
     public void OptionButton()
     {
         isOption = !isOption;
+        SFXManager.SFXins.Click();
     }
-    void SliderSoundImage()
+    public void SetBgmVolume()
     {
-        if (BGM.value >= 75)
-        {
-            BGMS.sprite = Sounds[0];
-        }
-        else if (BGM.value >= 40)
-        {
-            BGMS.sprite = Sounds[1];
-        }
-        else if (BGM.value >= 1)
-        {
-            BGMS.sprite = Sounds[2];
-        }
-        else if (BGM.value == 0)
-        {
-            BGMS.sprite = Sounds[3];
-        }
-
-        if (SFX.value >= 75)
-        {
-            SFXS.sprite = Sounds[0];
-        }
-        else if (SFX.value >= 40)
-        {
-            SFXS.sprite = Sounds[1];
-        }
-        else if (SFX.value >= 1)
-        {
-            SFXS.sprite = Sounds[2];
-        }
-        else if (SFX.value == 0)
-        {
-            SFXS.sprite = Sounds[3];
-        }
+        audioMixer.SetFloat("BGM", Mathf.Log10(BGMSl.value) * 20);
+    }
+    public void SetSFXVolume()
+    {
+        audioMixer.SetFloat("SFX", Mathf.Log10(SFXSl.value) * 20);
     }
 }
