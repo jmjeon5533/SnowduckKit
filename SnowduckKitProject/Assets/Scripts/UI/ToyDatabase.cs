@@ -6,7 +6,7 @@ public class ToyDatabase : MonoBehaviour
 {
     public GameObject ButtonOrigin;
     public GameObject Vf;
-    public ToyDatabase This;
+    public static ToyDatabase This;
 
     private Dictionary<GameObject, GameObject> Buttons = new Dictionary<GameObject, GameObject>(); 
 
@@ -21,6 +21,7 @@ public class ToyDatabase : MonoBehaviour
         {
             Buttons.Add(_Target, Instantiate(ButtonOrigin, Vf.transform));
             Buttons[_Target].GetComponent<CameraMoveButton>().Target = _Target;
+            Buttons[_Target].SetActive(true);
         }
     }
 

@@ -20,10 +20,10 @@ public class UIManager : MonoBehaviour
         ToyP.anchoredPosition = new Vector2(-1100, 30);
         isToyPanel = false;
         //≈‰¿Ã ∆–≥Œ : ¥›»˚
-        for (int i = 0; i < 7; i++)
-        {
-            ToyImage[i].enabled = false;
-        }
+        //for (int i = 0; i < 7; i++)
+        //{
+        //    //ToyImage[i].enabled = false;
+        //}
     }
 
     
