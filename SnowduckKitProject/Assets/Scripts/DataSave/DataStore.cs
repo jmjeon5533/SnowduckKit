@@ -63,6 +63,7 @@ public class DataStore : MonoBehaviour
 
     private void Start()
     {
+        AllPrefebs = Resources.LoadAll<GameObject>("Prefabs");
         Load();
         InvokeRepeating("Save", 60f, 60f);
     }
@@ -84,8 +85,9 @@ public class DataStore : MonoBehaviour
                 {
                     if (nOb.name == nSDF.Name[i])
                     {
-                        GameObject nGO = Instantiate((GameObject)nOb, nSDF.Pos[i], Quaternion.Euler(nSDF.Rot[i]));
-                        _Save.SaveObjects.Add(nGO);
+                        GameObject nGO = Instantiate(nOb, nSDF.Pos[i], Quaternion.Euler(nSDF.Rot[i]));
+                        ToyDatabase.This.AddToy(nGO);
+                        //_Save.SaveObjects.Add(nGO);
                         break;
                     }
                 }

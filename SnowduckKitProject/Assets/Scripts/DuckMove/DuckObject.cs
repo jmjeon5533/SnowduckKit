@@ -11,10 +11,12 @@ public class DuckObject : MonoBehaviour
     public bool Move;
     public bool isSelected = false;
     public float RecoveryTime;
+    public BoxCollider BC;
 
     // Start is called before the first frame update
     void Start()
     {
+        BC = GetComponent<BoxCollider>();
         RecoveryTime = 10f;
         Move = false;
     }
@@ -66,6 +68,7 @@ public class DuckObject : MonoBehaviour
     {
         if (collision.collider.gameObject.CompareTag("Floor"))
         {
+            BC.enabled = false;
             DestinationPoint.y = transform.position.y;
             nav = GetComponent<NavMeshAgent>();
             nav.enabled = true;
