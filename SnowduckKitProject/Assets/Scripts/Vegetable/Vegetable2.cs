@@ -6,9 +6,11 @@ public class Vegetable2 : MonoBehaviour
 {
     public Rigidbody rb;
     public CapsuleCollider sphereCollider;
+    public float DestroyTime;
     // Start is called before the first frame update
     void Start()
     {
+        DestroyTime = 60f;
         rb = GetComponent<Rigidbody>();
         sphereCollider = GetComponent<CapsuleCollider>();
     }
@@ -16,7 +18,11 @@ public class Vegetable2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        DestroyTime -= Time.deltaTime;
+        if (DestroyTime < 0)
+        {
+            ToyDatabase.This.RemoveToy(transform.gameObject);
+        }
     }
     private void OnCollisionEnter(Collision collision)
     {

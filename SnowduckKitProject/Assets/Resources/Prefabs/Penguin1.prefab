@@ -105,6 +105,7 @@ MonoBehaviour:
   Move: 0
   isSelected: 0
   RecoveryTime: 0
+  BC: {fileID: 0}
 --- !u!195 &-2664699563939106175
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -116,15 +117,15 @@ NavMeshAgent:
   m_AgentTypeID: 0
   m_Radius: 0.873702
   m_Speed: 3.5
-  m_Acceleration: 10
+  m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0.6431844
+  m_Height: 3
+  m_BaseOffset: 0.61
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!65 &-6497945866391385815

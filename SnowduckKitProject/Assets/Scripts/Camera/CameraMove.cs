@@ -38,24 +38,24 @@ public class CameraMove : MonoBehaviour
         {
             Cursor.visible = true;
         }
-        if (Input.GetMouseButtonDown(0))
-        {
-            ModeDuck();//오리로 카메라 이동
-        }
+        //if (Input.GetMouseButtonDown(0))
+        //{
+        //    ModeDuck();//오리로 카메라 이동
+        //}
         if (Input.GetAxis("Vertical") != 0f || Input.GetAxis("Horizontal") != 0f)
         {
             Mode = 0;
-            if (SelectedTransform != null)
+            if (transform.parent != null)
             {
+                transform.parent.parent.GetComponent<DuckObject>().isSelected = false;
                 transform.parent = null;
-                SelectedTransform.GetComponent<DuckObject>().isSelected = false;
             }
             Vector3 move = transform.forward * Input.GetAxis("Vertical") + transform.right * Input.GetAxis("Horizontal");
             transform.position += move * MoveSpeed * Time.deltaTime;
         }
-        if (SelectedTransform != null)
+        if (transform.parent != null)
         {
-            if (!SelectedTransform.GetComponent<DuckObject>().isSelected)
+            if (transform.parent.parent.GetComponent<DuckObject>().isSelected == false)
             {
                 Mode = 0;
                 transform.parent = null;
@@ -65,7 +65,6 @@ public class CameraMove : MonoBehaviour
     }
     public void ModeDuck()
     {
-
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit[] hit = Physics.RaycastAll(ray);
         for (int i = 0; i < hit.Length; i++)
