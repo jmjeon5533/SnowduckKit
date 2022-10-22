@@ -7,16 +7,13 @@ public class DuckObject : MonoBehaviour
 {
     NavMeshAgent nav;
     public float DeleteTime;
-    public GameObject DestinationObject;
     public Vector3 DestinationPoint;
     public bool Move;
+
     // Start is called before the first frame update
     void Start()
     {
         Move = false;
-        DestinationPoint.x = transform.position.x;
-        DestinationPoint.z = transform.position.z;
-        DestinationObject = GameObject.FindGameObjectWithTag("Destination");
     }
 
     // Update is called once per frame
@@ -28,12 +25,13 @@ public class DuckObject : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit))
             {
-                Debug.Log(hit.transform.name);
-                Debug.Log(hit.point);
-                DestinationPoint = hit.point;
-                if (nav != null)
+                if (hit.collider.CompareTag("Floor"))
                 {
-                    nav.isStopped = false;
+                    DestinationPoint = hit.point;
+                    if (nav != null)
+                    {
+                        nav.isStopped = false;
+                    }
                 }
 
             }
@@ -58,7 +56,7 @@ public class DuckObject : MonoBehaviour
             nav.enabled = true;
             StartCoroutine(MoveStart());
         }
-        else if (collision.collider.gameObject.name.Contains("DuckObject"))
+        else if (collision.collider.gameObject.name.Contains("Duck"))
         {
             nav.isStopped=true;
         }
