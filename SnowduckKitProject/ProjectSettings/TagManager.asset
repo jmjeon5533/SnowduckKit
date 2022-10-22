@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Floor
   - Destination
+  - Duck
   layers:
   - Default
   - TransparentFX
