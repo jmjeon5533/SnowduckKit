@@ -32,4 +32,10 @@ public class ToyDatabase : MonoBehaviour
         Buttons.Remove(_Target);
         Destroy(_Target);
     }
+
+    private void Update()
+    {
+        RectTransform rectTransform = GetComponent<RectTransform>();
+        rectTransform.sizeDelta = new Vector2(Buttons.Count * 95 , 0);
+    }
 }
