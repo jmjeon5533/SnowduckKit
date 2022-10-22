@@ -54,19 +54,17 @@ public class OptionTab : MonoBehaviour
     }
     public void OptionButton()
     {
-        if (!isDictionary)
-        {
+        if (isDictionary)
+            isDictionary = false;
             isOption = !isOption;
             SFXManager.SFXins.Click();
-        }
     }
     public void DictionaryButton()
     {
-        if (!isOption)
-        {
+        if (isOption)
+            isOption = false;
             isDictionary = !isDictionary;
             SFXManager.SFXins.Click();
-        }
     }
     public void SetBgmVolume()
     {
