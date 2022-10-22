@@ -8,9 +8,9 @@ public class OptionTab : MonoBehaviour
 {
     public float BGMVolume, SFXVolume;
 
-    public bool isOption;
+    public bool isOption,isDictionary;
     [SerializeField]
-    GameObject OptionPanel;
+    GameObject OptionPanel,DictionaryPanel;
     [SerializeField]
     Slider BGMSl, SFXSl;
     [SerializeField]
@@ -23,6 +23,9 @@ public class OptionTab : MonoBehaviour
     {
         isOption = false;
         OptionPanel.SetActive(false);
+
+        isDictionary = false;
+        DictionaryPanel.SetActive(false);
     }
     void Start()
     {
@@ -40,11 +43,28 @@ public class OptionTab : MonoBehaviour
         {
             OptionPanel.SetActive(false);
         }
+        if (isDictionary)
+        {
+            DictionaryPanel.SetActive(true);
+        }
+        else
+        {
+            DictionaryPanel.SetActive(false);
+        }
     }
     public void OptionButton()
     {
-        isOption = !isOption;
-        SFXManager.SFXins.Click();
+        if (isDictionary)
+            isDictionary = false;
+            isOption = !isOption;
+            SFXManager.SFXins.Click();
+    }
+    public void DictionaryButton()
+    {
+        if (isOption)
+            isOption = false;
+            isDictionary = !isDictionary;
+            SFXManager.SFXins.Click();
     }
     public void SetBgmVolume()
     {

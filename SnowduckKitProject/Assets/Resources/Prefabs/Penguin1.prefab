@@ -104,6 +104,8 @@ MonoBehaviour:
   DestinationPoint: {x: 0, y: 0, z: 0}
   Move: 0
   isSelected: 0
+  RecoveryTime: 0
+  BC: {fileID: 0}
 --- !u!195 &-2664699563939106175
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -122,8 +124,8 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 1.2863688
-  m_BaseOffset: 0.6431844
+  m_Height: 3
+  m_BaseOffset: 0.61
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!65 &-6497945866391385815

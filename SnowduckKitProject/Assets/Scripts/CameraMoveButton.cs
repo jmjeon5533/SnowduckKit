@@ -14,6 +14,22 @@ public class CameraMoveButton : MonoBehaviour
 
     public void CameraMove()
     {
-        //Target.transform.position;
+        Transform CameraTr = Camera.main.transform;
+        if (Target.CompareTag("Duck"))
+        {
+            if (CameraTr.parent != null)
+            {
+                CameraTr.parent.parent.GetComponent<DuckObject>().isSelected = false;
+                CameraTr.parent = null;
+            }
+            Target.transform.GetComponent<DuckObject>().isSelected = true;
+            CameraTr.position = Target.transform.GetChild(0).position;
+            CameraTr.rotation = Target.transform.GetChild(0).rotation;
+            CameraTr.parent = Target.transform.GetChild(0);
+            CameraTr.GetComponent<CameraMove>().Mode = 1;
+        }
     }
+        //Target.transform.position;
+
+    
 }
