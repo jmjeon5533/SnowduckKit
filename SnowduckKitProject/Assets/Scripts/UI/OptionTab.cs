@@ -6,17 +6,18 @@ using UnityEngine.UI;
 
 public class OptionTab : MonoBehaviour
 {
+    public static OptionTab OpTab = new OptionTab();
+    private void Awake()
+    {
+        OpTab = this;
+    }
     public float BGMVolume, SFXVolume;
 
     public bool isOption,isDictionary;
-    [SerializeField]
-    GameObject OptionPanel,DictionaryPanel;
-    [SerializeField]
-    Slider BGMSl, SFXSl;
-    [SerializeField]
-    Image BGMS, SFXS;
-    [SerializeField]
-    Sprite[] Sounds = new Sprite[4];
+    public GameObject OptionPanel,DictionaryPanel;
+    public Slider BGMSl, SFXSl;
+    public Image BGMS, SFXS;
+    public Sprite[] Sounds = new Sprite[4];
 
     public AudioMixer audioMixer;
     private void OnValidate()
@@ -29,7 +30,11 @@ public class OptionTab : MonoBehaviour
     }
     void Start()
     {
-        
+        isOption = false;
+        OptionPanel.SetActive(false);
+
+        isDictionary = false;
+        DictionaryPanel.SetActive(false);
     }
 
     // Update is called once per frame

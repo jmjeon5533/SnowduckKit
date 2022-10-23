@@ -7,13 +7,15 @@ public class dictionary : MonoBehaviour
 {
     [SerializeField]
     Image ToyPicture;
+    [SerializeField]
+    Text ToyNameText;
     public Sprite[] ToyImage;
     public string[] ToyName;
     public int Number;
 
     void Start()
     {
-        
+        DictionarySet();
         Number = 0;
     }
 
@@ -24,18 +26,23 @@ public class dictionary : MonoBehaviour
     }
     public void LeftButton()
     {
+        if (Number <= 0)
+            return;
         Number--;
-        Mathf.Clamp(Number, 0, ToyImage.Length);
         DictionarySet();
+        SFXManager.SFXins.Click();
     }
     public void RightButton()
     {
+        if (Number >= (ToyImage.Length-1))
+            return;
         Number++;
-        Mathf.Clamp(Number, 0, ToyImage.Length);
         DictionarySet();
+        SFXManager.SFXins.Click();
     }
-    void DictionarySet()
+    public void DictionarySet()
     {
         ToyPicture.sprite = ToyImage[Number];
+        ToyNameText.text = ToyName[Number];
     }
 }

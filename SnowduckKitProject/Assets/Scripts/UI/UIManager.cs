@@ -57,7 +57,6 @@ public class UIManager : MonoBehaviour
             }
         }
         timeText.text = $"{time[3]}d {time[2]}h {time[1]}m {time[0]}s";
-        Debug.Log($"{time[3]}d {time[2]}h {time[1]}m {time[0]}s");
         
         yield return new WaitForSeconds(1);
         StartCoroutine(Timeset());
