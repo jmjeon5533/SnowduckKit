@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class OptionTab : MonoBehaviour
 {
@@ -10,13 +11,13 @@ public class OptionTab : MonoBehaviour
     private void Awake()
     {
         OpTab = this;
+        DontDestroyOnLoad(gameObject);
     }
     public float BGMVolume, SFXVolume;
 
     public bool isOption,isDictionary;
     public GameObject OptionPanel,DictionaryPanel;
-    public Slider BGMSl, SFXSl;
-    public Image BGMS, SFXS;
+    public Slider BGMSl1,BGMSl2, SFXSl1, SFXSl2;
     public Sprite[] Sounds = new Sprite[4];
 
     public AudioMixer audioMixer;
@@ -73,10 +74,31 @@ public class OptionTab : MonoBehaviour
     }
     public void SetBgmVolume()
     {
-        audioMixer.SetFloat("BGM", Mathf.Log10(BGMSl.value) * 20);
+        if(SceneManager.GetActiveScene().name == "Ingame")
+        {
+            audioMixer.SetFloat("BGM", Mathf.Log10(BGMSl1.value) * 20);
+
+        }
+        else
+        {
+            audioMixer.SetFloat("BGM", Mathf.Log10(BGMSl2.value) * 20);
+        }
     }
     public void SetSFXVolume()
     {
-        audioMixer.SetFloat("SFX", Mathf.Log10(SFXSl.value) * 20);
+        if (SceneManager.GetActiveScene().name == "Ingame")
+        {
+            audioMixer.SetFloat("SFX", Mathf.Log10(SFXSl1.value) * 20);
+
+        }
+        else
+        {
+            audioMixer.SetFloat("SFX", Mathf.Log10(SFXSl2.value) * 20);
+        }
+        
+    }
+    public void ingameSceneLoad()
+    {
+        OptionPanel = GameObject.Find("OptionPanel").gameObject;
     }
 }

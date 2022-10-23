@@ -9,6 +9,7 @@ public class SFXManager : MonoBehaviour
     private void Awake()
     {
         SFXins = this;
+        DontDestroyOnLoad(gameObject);
     }
     void Start()
     {
