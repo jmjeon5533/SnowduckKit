@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5019361126273923447
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5019361126273923449}
+  - component: {fileID: 5019361126273923446}
+  - component: {fileID: 5019361127131163370}
+  m_Layer: 0
+  m_Name: UIManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5019361126273923449
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5019361126273923447}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 636.45026, y: 598.56976, z: -1.8271484}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5019361126273923446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5019361126273923447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f456a8c3cdb636341ad6fb362e0eda11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ToyP: {fileID: 0}
+  isToyPanel: 0
+  ToyImage:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  timeText: {fileID: 0}
+  pointText: {fileID: 0}
+  time: 00000000000000000000000000000000
+--- !u!114 &5019361127131163370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5019361126273923447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a45b31f91e2085b4ba19a8f9ba4244a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BGMVolume: 0
+  SFXVolume: 0
+  isOption: 0
+  isDictionary: 0
+  OptionPanel: {fileID: 0}
+  DictionaryPanel: {fileID: 0}
+  BGMSl: {fileID: 0}
+  SFXSl: {fileID: 0}
+  BGMS: {fileID: 0}
+  SFXS: {fileID: 0}
+  Sounds:
+  - {fileID: 21300000, guid: 39c556602adfa9f458168800592d88b4, type: 3}
+  - {fileID: 21300000, guid: eec33355fbc04cc40b12be52cb7d36cf, type: 3}
+  - {fileID: 21300000, guid: fb44cb2471ca05f468e371e421775b42, type: 3}
+  - {fileID: 21300000, guid: bb6e19d961b1b4d46810e1facf872ee0, type: 3}
+  audioMixer: {fileID: 24100000, guid: 0a2d340f0bad3a949b41eace9a3724ea, type: 2}
