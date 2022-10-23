@@ -14,14 +14,14 @@ public class TitleOption : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isOption)
-        {
-            OptionPanel.SetActive(true);
-        }
-        else
-        {
-            OptionPanel.SetActive(false);
-        }
+        //if (isOption)
+        //{
+        //    OptionPanel.SetActive(true);
+        //}
+        //else
+        //{
+        //    OptionPanel.SetActive(false);
+        //}
     }
     public void OptionButton()
     {
