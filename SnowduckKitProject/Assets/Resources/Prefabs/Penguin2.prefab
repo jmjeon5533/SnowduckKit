@@ -126,7 +126,7 @@ MonoBehaviour:
   DestinationPoint: {x: 0, y: 0, z: 0}
   Move: 0
   isSelected: 0
-  RecoveryTime: 0
+  RecoveryTime: 10
   BC: {fileID: 0}
 --- !u!65 &-1451183229413056508
 BoxCollider:
