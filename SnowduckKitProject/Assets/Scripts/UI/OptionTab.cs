@@ -27,7 +27,8 @@ public class OptionTab : MonoBehaviour
         OptionPanel.SetActive(false);
 
         isDictionary = false;
-        DictionaryPanel.SetActive(false);
+        if (DictionaryPanel != null)
+            DictionaryPanel.SetActive(false);
     }
     void Start()
     {
@@ -35,7 +36,8 @@ public class OptionTab : MonoBehaviour
         OptionPanel.SetActive(false);
 
         isDictionary = false;
-        DictionaryPanel.SetActive(false);
+        if (DictionaryPanel != null)
+            DictionaryPanel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -51,11 +53,13 @@ public class OptionTab : MonoBehaviour
         }
         if (isDictionary)
         {
-            DictionaryPanel.SetActive(true);
+            if (DictionaryPanel != null)
+                DictionaryPanel.SetActive(true);
         }
         else
         {
-            DictionaryPanel.SetActive(false);
+            if (DictionaryPanel != null)
+                DictionaryPanel.SetActive(false);
         }
     }
     public void OptionButton()

@@ -13,6 +13,9 @@ public class Title : MonoBehaviour
     Sprite[] background = new Sprite[2];
     [SerializeField]
     Image BackG;
+
+    public GameObject credits;
+    bool f = false;
     void Start()
     {
         BackG.sprite = background[0];
@@ -48,10 +51,19 @@ public class Title : MonoBehaviour
     }
     public void Credit()
     {
-
+        if (f == true)
+        {
+            f = false;
+            credits.SetActive(false);
+        }
+        else
+        {
+            f = true;
+            credits.SetActive(true);
+        }
     }
     public void Exit()
     {
-
+        Application.Quit();
     }
 }

@@ -74,7 +74,7 @@ public class UIManager : MonoBehaviour
     void upperText()
     {
         
-        pointText.text = $"{DataStore.GetPoint()}pt";
+       // pointText.text = $"{DataStore.GetPoint()}pt";
     }
     
     void Update()

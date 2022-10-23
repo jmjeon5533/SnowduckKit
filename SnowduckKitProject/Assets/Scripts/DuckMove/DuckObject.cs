@@ -72,7 +72,10 @@ public class DuckObject : MonoBehaviour
     {
         if (collision.collider.gameObject.CompareTag("Floor"))
         {
-            BC.isTrigger = true;
+            if (!BC.isTrigger)
+            {
+                BC.isTrigger = true;
+            }
             DestinationPoint.y = transform.position.y;
             nav = GetComponent<NavMeshAgent>();
             nav.enabled = true;
@@ -90,7 +93,10 @@ public class DuckObject : MonoBehaviour
     {
         if (collision.collider.gameObject.CompareTag("Floor"))
         {
-            BC.isTrigger = true;
+            if (!BC.isTrigger)
+            {
+                BC.isTrigger = true;
+            }
             DestinationPoint.y = transform.position.y;
             nav = GetComponent<NavMeshAgent>();
             nav.enabled = true;
