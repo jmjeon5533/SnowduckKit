@@ -13,6 +13,6 @@ public class Screenshot : MonoBehaviour
 
     public void Shot ()
     {
-        ScreenCapture.CaptureScreenshot(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "/Screenshot.png");
+        ScreenCapture.CaptureScreenshot(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "/Screenshot"+ DateTime.Now.ToString("yyyyMMddhhmmss")+".png");
     }
 }
