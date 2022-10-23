@@ -11,6 +11,7 @@ public class OptionTab : MonoBehaviour
     private void Awake()
     {
         OpTab = this;
+        //DontDestroyOnLoad(gameObject);
     }
     public float BGMVolume, SFXVolume;
 
