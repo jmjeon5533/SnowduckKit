@@ -8,6 +8,7 @@ public class BGMManger : MonoBehaviour
     private void Awake()
     {
         BGMins = this;
+        DontDestroyOnLoad(gameObject);
     }
     public AudioSource[] BGM = new AudioSource[3];
     void Start()
