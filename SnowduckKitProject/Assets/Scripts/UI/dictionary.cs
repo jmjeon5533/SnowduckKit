@@ -8,9 +8,10 @@ public class dictionary : MonoBehaviour
     [SerializeField]
     Image ToyPicture;
     [SerializeField]
-    Text ToyNameText;
+    Text ToyNameText, ToyExplainText;
     public Sprite[] ToyImage;
     public string[] ToyName;
+    public string[] ToyExplain;
     public int Number;
 
     void Start()
@@ -44,5 +45,6 @@ public class dictionary : MonoBehaviour
     {
         ToyPicture.sprite = ToyImage[Number];
         ToyNameText.text = ToyName[Number];
+        ToyExplainText.text = ToyExplain[Number];
     }
 }
