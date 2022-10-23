@@ -41,7 +41,7 @@ public class Title : MonoBehaviour
     }
     public void IngameSceneMove()
     {
-        SceneManager.LoadScene("ingame");
+        SceneManager.LoadScene("Ingame");
     }
     public void Setting()
     {
