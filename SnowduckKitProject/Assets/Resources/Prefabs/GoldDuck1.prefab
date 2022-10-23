@@ -155,7 +155,7 @@ MonoBehaviour:
   DestinationPoint: {x: 0, y: 0, z: 0}
   Move: 0
   isSelected: 0
-  RecoveryTime: 0
+  RecoveryTime: 10
   BC: {fileID: 0}
 --- !u!1 &5077562196395598406
 GameObject:

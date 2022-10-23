@@ -12,6 +12,14 @@ public class DuckProduce : MonoBehaviour
     public GameObject Penguin2;
     public GameObject GoldDuck1;
     public GameObject GoldDuck2;
+    public GameObject Cat1;
+    public GameObject Cat2;
+    public GameObject Cat3;
+    public GameObject Cat4;
+    public GameObject Cat5;
+    public GameObject Cat6;
+    public GameObject Cat7;
+    public GameObject Cat8;
     public Vector3 MinPosition;
     public Vector3 MaxPosition;
     public GameObject FloorGameobject;
@@ -42,7 +50,7 @@ public class DuckProduce : MonoBehaviour
         {
             ProduceTimer = 0f;
             //Instantiate(DuckObject, new Vector3(Random.Range(MinPosition.x, MaxPosition.x), FloorGameobject.transform.position.y + ProduceHeight, Random.Range(MinPosition.z, MaxPosition.z)),Quaternion.identity);
-            int RandomInt = Random.Range(0, 6);
+            int RandomInt = Random.Range(0, 14);
             if (RandomInt == 0)
             {
                 ToyDatabase.This.AddToy(Instantiate(DuckObject, new Vector3(Random.Range(MinPosition.x, MaxPosition.x), FloorGameobject.transform.position.y + ProduceHeight, Random.Range(MinPosition.z, MaxPosition.z)), Quaternion.identity));
@@ -67,7 +75,38 @@ public class DuckProduce : MonoBehaviour
             {
                 ToyDatabase.This.AddToy(Instantiate(GoldDuck2, new Vector3(Random.Range(MinPosition.x, MaxPosition.x), FloorGameobject.transform.position.y + ProduceHeight, Random.Range(MinPosition.z, MaxPosition.z)), Quaternion.identity));
             }
-
+            else if (RandomInt == 6)
+            {
+                ToyDatabase.This.AddToy(Instantiate(Cat1, new Vector3(Random.Range(MinPosition.x, MaxPosition.x), FloorGameobject.transform.position.y + ProduceHeight, Random.Range(MinPosition.z, MaxPosition.z)), Quaternion.identity));
+            }
+            else if (RandomInt == 7)
+            {
+                ToyDatabase.This.AddToy(Instantiate(Cat2, new Vector3(Random.Range(MinPosition.x, MaxPosition.x), FloorGameobject.transform.position.y + ProduceHeight, Random.Range(MinPosition.z, MaxPosition.z)), Quaternion.identity));
+            }
+            else if (RandomInt == 8)
+            {
+                ToyDatabase.This.AddToy(Instantiate(Cat3, new Vector3(Random.Range(MinPosition.x, MaxPosition.x), FloorGameobject.transform.position.y + ProduceHeight, Random.Range(MinPosition.z, MaxPosition.z)), Quaternion.identity));
+            }
+            else if (RandomInt == 9)
+            {
+                ToyDatabase.This.AddToy(Instantiate(Cat4, new Vector3(Random.Range(MinPosition.x, MaxPosition.x), FloorGameobject.transform.position.y + ProduceHeight, Random.Range(MinPosition.z, MaxPosition.z)), Quaternion.identity));
+            }
+            else if (RandomInt == 10)
+            {
+                ToyDatabase.This.AddToy(Instantiate(Cat5, new Vector3(Random.Range(MinPosition.x, MaxPosition.x), FloorGameobject.transform.position.y + ProduceHeight, Random.Range(MinPosition.z, MaxPosition.z)), Quaternion.identity));
+            }
+            else if (RandomInt == 11)
+            {
+                ToyDatabase.This.AddToy(Instantiate(Cat6, new Vector3(Random.Range(MinPosition.x, MaxPosition.x), FloorGameobject.transform.position.y + ProduceHeight, Random.Range(MinPosition.z, MaxPosition.z)), Quaternion.identity));
+            }
+            else if (RandomInt == 12)
+            {
+                ToyDatabase.This.AddToy(Instantiate(Cat7, new Vector3(Random.Range(MinPosition.x, MaxPosition.x), FloorGameobject.transform.position.y + ProduceHeight, Random.Range(MinPosition.z, MaxPosition.z)), Quaternion.identity));
+            }
+            else if (RandomInt == 13)
+            {
+                ToyDatabase.This.AddToy(Instantiate(Cat8, new Vector3(Random.Range(MinPosition.x, MaxPosition.x), FloorGameobject.transform.position.y + ProduceHeight, Random.Range(MinPosition.z, MaxPosition.z)), Quaternion.identity));
+            }
         }
         VegetableTimer += Time.deltaTime;
         if(VegetableTimer> VegetableMax)
